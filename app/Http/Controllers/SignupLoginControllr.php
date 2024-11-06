@@ -65,6 +65,6 @@ class SignupLoginControllr extends Controller
     public function logout(){
         Auth::logout();
         toastr()->success('Your Log Out successful.');
-        return redirect()->route('home');
+        return redirect()->route('login');
     }
 }

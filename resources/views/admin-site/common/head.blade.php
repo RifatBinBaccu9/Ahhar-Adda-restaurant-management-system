@@ -7,7 +7,8 @@
     <meta content="" name="keywords">
   
     <!-- Favicons -->
-    <link href="/admin-site/img/favicon.png" rel="icon">
+    <link rel="icon" type="image" href="https://i.ibb.co.com/kXDS7cq/AA.png">
+    {{-- <link href="/user-site/img/images.png" rel="icon"> --}}
   
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 

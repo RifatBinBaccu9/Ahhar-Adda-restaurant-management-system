@@ -3,9 +3,9 @@
     <ul class="sidebar-nav" id="sidebar-nav">
 
       <li class="nav-item">
-        <a class="nav-link " href="{{url('/user/profile')}}">
+        <a class="nav-link " href="{{url('/admin')}}">
           <i class="bi bi-grid"></i>
-          <span>Profile</span>
+          <span>Dashboard</span>
         </a>
       </li><!-- End Dashboard Nav -->
       
@@ -154,7 +154,20 @@
   </li><!-- End Service Setting Nav -->
       <li class="nav-heading">Pages Setting</li>
      
+      <li class="nav-item">
+          <a class="nav-link collapsed" href="{{ url('/user/profile') }}">
+            <i class="bi bi-person"></i>
+            <span>Profile</span>
+        </a>
+    </li><!-- End Booking Setting Nav -->
 
+      <li class="nav-item">
+          <a class="nav-link collapsed" href="{{ route('logout') }}">
+            <i class="bi bi-box-arrow-right"></i>
+            <span>Log Out</span>
+        </a>
+    </li><!-- End Booking Setting Nav -->
+    
     </ul>
 
   </aside>
