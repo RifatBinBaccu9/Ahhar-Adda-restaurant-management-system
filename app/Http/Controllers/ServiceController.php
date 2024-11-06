@@ -25,18 +25,34 @@ class ServiceController extends Controller
 }
    public function addServicePush(Request $req){
     $req->validate([
-        'ServiceIcon'=> 'required|max:100',
+        'ServiceImage'=> 'required',
         'ServiceTitle'=> 'required|max:50',
         'ServiceDetails'=> 'required|max:255',
     ]);
+   
+
+    if (! is_dir(public_path('admin-site/img/service'))) {
+        mkdir(public_path('admin-site/img/service'), 0777, true);
+    }
+
     $serviceData=[
-        'ServiceIcon'=>$req->ServiceIcon,
         'ServiceTitle'=>$req->ServiceTitle,
         'ServiceDetails'=>$req->ServiceDetails,
     ];
+
+    if($req->hasFile('ServiceImage')){
+        $image=$req->file('ServiceImage');
+        $name=$image->getClientOriginalName();
+        $imageName = time() . '_' . $name;
+        
+        $image->move(public_path('admin-site/img/service'), $imageName);
+        
+        $serviceData['ServiceImage'] = 'admin-site/img/service/' . $imageName;
+    }
     AddService::create($serviceData);
     toastr()->success('Service Create Successful.');
     return redirect()->back();
+    // dd($serviceData);
    }
    public function serviceList() {
     $serviceStor=AddService::get();
@@ -53,16 +69,24 @@ class ServiceController extends Controller
   return view('admin-site.pages.service.serviceUpdate', ['NavbarView'=>$navbar,'serviceDataUpdate'=>$serviceDataStor, 'user'=>$user]);
    }
    public function serviceListEdit(Request $req){
-    $req->validate([
-        'ServiceIcon'=> 'required|max:100',
-        'ServiceTitle'=> 'required|max:50',
-        'ServiceDetails'=> 'required|max:255',
-    ]);
+    if (! is_dir(public_path('admin-site/img/service'))) {
+        mkdir(public_path('admin-site/img/service'), 0777, true);
+    }
+
     $serviceData=[
-        'ServiceIcon'=>$req->ServiceIcon,
         'ServiceTitle'=>$req->ServiceTitle,
         'ServiceDetails'=>$req->ServiceDetails,
     ];
+
+    if($req->hasFile('ServiceImage')){
+        $image=$req->file('ServiceImage');
+        $name=$image->getClientOriginalName();
+        $imageName = time() . '_' . $name;
+        
+        $image->move(public_path('admin-site/img/service'), $imageName);
+        
+        $serviceData['ServiceImage'] = 'admin-site/img/service/' . $imageName;
+    }
     AddService::where(['id'=>$req->id])->update($serviceData);
     toastr()->success('Service Update Successful.');
     return redirect()->route('serviceList');

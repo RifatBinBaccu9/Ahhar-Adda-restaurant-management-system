@@ -20,7 +20,7 @@
             <table class="table table-head-fixed text-nowrap">
               <thead>
                 <tr>
-                    <th>Service Icon</th>
+                    <th>Service Image</th>
                     <th>Service Title</th>
                     <th>Service Details</th>
                     <th>Action</th>
@@ -29,7 +29,7 @@
               <tbody>
                 @foreach ($serviceView as $item)
                 <tr>
-                    <td>{{$item->ServiceIcon}}</td>
+                    <td><img src="{{asset($item->ServiceImage)}}" alt="" height="30"></td>
                     <td>{{$item->ServiceTitle}}</td>
                     <td>{{$item->ServiceDetails}}</td>
                     <td>

@@ -17,12 +17,12 @@
           <h5 class="card-title">Add Your Service</h5>
 
           <!-- Vertical Form -->
-          <form class="row g-3" action="{{route('addServicePush')}}" method="POST">
+          <form class="row g-3" action="{{route('addServicePush')}}" method="POST" enctype="multipart/form-data">
             @csrf      
             <div class="col-12">
-              <label for="ServiceIcon" class="form-label">Service Icon</label>
-              <input type="text" name="ServiceIcon" class="@error('ServiceIcon') is-invalid @enderror form-control" id="ServiceIcon">
-              @error('ServiceIcon')
+              <label for="ServiceImage" class="form-label">Service Image</label>
+              <input type="file"  name="ServiceImage" class="@error('ServiceImage') is-invalid @enderror form-control" id="ServiceImage">
+              @error('ServiceImage')
               <div class="text-danger">{{ $message }}</div>
             @enderror
             </div>

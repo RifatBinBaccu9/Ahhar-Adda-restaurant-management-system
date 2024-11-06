@@ -3,11 +3,11 @@
 <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Add Service</h1>
+      <h1>Update Service</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="{{url('/')}}">Home</a></li>
-          <li class="breadcrumb-item active">Add Service</li>
+          <li class="breadcrumb-item active">Update Service</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
@@ -17,29 +17,20 @@
           <h5 class="card-title">Add Your Services</h5>
 
           <!-- Vertical service Form -->
-          <form class="row g-3" action="{{route('serviceListEdit')}}" method="POST">
+          <form class="row g-3" action="{{route('serviceListEdit')}}" method="POST" enctype="multipart/form-data">
             @csrf
             <input type="hidden" name="id" value="{{$serviceDataUpdate->id}}">
             <div class="col-12">
-              <label for="ServiceIcon" class="form-label">Service Icon</label>
-              <input type="text" name="ServiceIcon" value="{{$serviceDataUpdate->ServiceIcon}}" class="@error('ServiceIcon') is-invalid @enderror form-control" id="ServiceIcon">
-              @error('ServiceIcon')
-              <div class="text-danger">{{ $message }}</div>
-            @enderror
+              <label for="ServiceImage" class="form-label">Service Image</label>
+              <input type="file"  name="ServiceImage" class=" form-control" id="ServiceImage">
             </div>
             <div class="col-12">
               <label for="ServiceTitle" class="form-label">Service Title</label>
-              <input type="text" name="ServiceTitle" value="{{$serviceDataUpdate->ServiceTitle}}" class="@error('ServiceTitle') is-invalid @enderror form-control" id="ServiceTitle">
-              @error('ServiceTitle')
-              <div class="text-danger">{{ $message }}</div>
-            @enderror
+              <input type="text" name="ServiceTitle" value="{{$serviceDataUpdate->ServiceTitle}}" class=" form-control" id="ServiceTitle">
             </div>
             <div class="form-floating mb-3">
-                <textarea class="form-control @error('ServiceDetails') is-invalid @enderror"  name="ServiceDetails" placeholder="Leave a comment here" id="ServiceDetails" style="height: 100px;">{{$serviceDataUpdate->ServiceDetails}}</textarea>
+                <textarea class="form-control "  name="ServiceDetails" placeholder="Leave a comment here" id="ServiceDetails" style="height: 100px;">{{$serviceDataUpdate->ServiceDetails}}</textarea>
                 <label for="ServiceDetails">Service Details</label>
-                @error('ServiceDetails')
-                <div class="text-danger">{{ $message }}</div>
-              @enderror
               </div>
             <div class="text-center">
               <button type="submit" class="btn btn-primary">Submit</button>
