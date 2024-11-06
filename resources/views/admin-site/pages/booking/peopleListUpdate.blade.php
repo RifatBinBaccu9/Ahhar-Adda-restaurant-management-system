@@ -22,10 +22,12 @@
             <input type="hidden" name="id" value="{{$peopleUpView->id}}">
             <div class="col-12">
               <label for="people" class="form-label">Number of people</label>
-              <input type="text" name="people" value="{{$peopleUpView->people}}" class="@error('people') is-invalid @enderror form-control" id="people">
-              @error('people')
-              <div class="text-danger">{{ $message }}</div>
-            @enderror
+              <input type="text" name="people" value="{{$peopleUpView->people}}" class=" form-control" id="people">
+
+            </div>
+            <div class="col-12">
+              <label for="AhharAddaBranch" class="form-label">Ahhar Adda Branch</label>
+              <input type="text" name="AhharAddaBranch" value="{{$peopleUpView->AhharAddaBranch}}" class="form-control" id="AhharAddaBranch">
             </div>
               <button type="submit" class="btn btn-primary">Submit</button>
             </div>

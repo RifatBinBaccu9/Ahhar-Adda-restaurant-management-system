@@ -97,7 +97,7 @@
                 <div class="service-item rounded pt-3">
                     <div class="p-4">
                         <img src="{{asset($item->ServiceImage)}}" alt="" height="50">
-                        <h5 style="margin-top: 10px">{{$item->ServiceTitle}}</h5>
+                        <h5 style="margin-top: 10px; color:orange">{{$item->ServiceTitle}}</h5>
                         <p>{{$item->ServiceDetails}}</p>
                     </div>
                 </div>

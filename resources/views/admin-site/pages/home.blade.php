@@ -146,14 +146,14 @@
     </div>
 
     <div class="card-body">
-      <h5 class="card-title">Booking <span>| Info</span></h5>
+      <h5 class="card-title">Contact <span>| Info</span></h5>
 
       <div class="d-flex align-items-center">
         <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
           <i class="fa-solid fa-address-book text-info"></i>
         </div>
         <div class="ps-3">
-          <h6>Booking Pepole: {{ $contact }}</h6>
+          <h6>Contact Pepole: {{ $contact }}</h6>
           
           <span class="text-{{ $iscontact ? 'success' : 'danger' }} small pt-1 fw-bold">
             {{ $contactChange }}%

@@ -36,10 +36,6 @@ class BookingController extends Controller
         ]);
     }
   public function bookingPeoplePush(Request $req){
-    $req->validate([
-        'people'=>'required',
-        'AhharAddaBranch'=>'required',
-    ]);
     $people=[
         'people'=>$req->people,
         'AhharAddaBranch'=>$req->AhharAddaBranch
@@ -75,10 +71,12 @@ public function addbookingPeopleDataedit (Request $req){
         'AhharAddaBranch'=>$req->AhharAddaBranch,
     ]; 
    AddBookingPeople::where(['id'=>$req->id])->update($people);
+   toastr()->success('Your Upbate Successful.');
    return redirect()->route('addbookingPeopleData');
 }
 public function addbookingPeopleDataDelete($id){
     AddBookingPeople::where(['id'=>$id])->delete();
+    toastr()->success('Your Delete Successful.');
     return redirect()->back();
 }
     // admin booking List section

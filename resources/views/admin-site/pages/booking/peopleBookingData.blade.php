@@ -37,7 +37,7 @@
                         </a>
                         
                         <!-- Delete Button -->
-                        <a href="{{route('TestimonialListdelete', $item->id)}}" class="btn btn-danger btn-sm">
+                        <a href="{{route('addbookingPeopleDataDelete', $item->id)}}" class="btn btn-danger btn-sm">
                             <i class="fas fa-trash-alt"></i> Delete
                         </a>
                     </td>    

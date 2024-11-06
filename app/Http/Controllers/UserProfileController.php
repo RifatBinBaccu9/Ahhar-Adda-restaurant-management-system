@@ -63,7 +63,7 @@ public function updatePassword(Request $req)
         toastr()->success('Your Password Update Successful.');
         return redirect()->back();
     } else {
-        toastr()->error('Your Password Update Failed.');
+        toastr()->error('Your Old password does not match.');
         return redirect()->back();
     }
 }

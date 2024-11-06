@@ -25,7 +25,8 @@
               @error('people')
               <div class="text-danger">{{ $message }}</div>
             @enderror
-            <div class="col-12">
+          </div>
+            <div class="col-12" style="padding-bottom: 20px">
               <label for="AhharAddaBranch" class="form-label">Ahhar Adda Branch</label>
               <input type="text" name="AhharAddaBranch" class="@error('AhharAddaBranch') is-invalid @enderror form-control" id="AhharAddaBranch">
               @error('AhharAddaBranch')
@@ -34,7 +35,7 @@
             </div>
               <button type="submit" class="btn btn-primary">Submit</button>
               <button type="reset" class="btn btn-secondary">Reset</button>
-            </div>
+            
           </form><!-- Vertical Form -->
 
         </div>
