@@ -24,6 +24,7 @@
                     <th>Email</th>
                     <th>Date $ Time</th>
                     <th>People</th>
+                    <th>Ahhar Adda Branch</th>
                     <th>Message</th>
                     <th>Status</th>
                 </tr>
@@ -35,6 +36,7 @@
                     <td>{{$item->email}}</td>
                     <td>{{$item->datetime}}</td>
                     <td>{{$item->select}}</td>
+                    <td>{{$item->AhharAddaBranch}}</td>
                     <td>{{$item->message}}</td>
                     <td>
 
