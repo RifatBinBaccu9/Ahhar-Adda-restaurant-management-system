@@ -14,9 +14,11 @@ return new class extends Migration
         Schema::create('bookings', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('phone');
             $table->string('email');
             $table->string('datetime');
             $table->string('select');
+            $table->string('AhharAddaBranch');
             $table->text('message');
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->enum('status', ['pending', 'accepted', 'rejected'])->default('pending');

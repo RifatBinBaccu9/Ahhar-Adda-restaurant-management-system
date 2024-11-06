@@ -21,9 +21,11 @@
               <thead>
                 <tr>
                     <th>Name</th>
+                    <th>Phone</th>
                     <th>Email</th>
                     <th>Date $ Time</th>
                     <th>People</th>
+                    <th>Ahhar Adda Branch</th>
                     <th>Message</th>
                     <th>Status</th>
                     <th>Action</th>
@@ -33,9 +35,11 @@
                 @foreach ($BookingView as $item)
                 <tr>
                     <td>{{$item->user->name}}</td>
+                    <td>{{$item->phone}}</td>
                     <td>{{$item->email}}</td>
                     <td>{{$item->datetime}}</td>
                     <td>{{$item->select}}</td>
+                    <td>{{$item->AhharAddaBranch}}</td>
                     <td>{{$item->message}}</td>
                     <td>
 

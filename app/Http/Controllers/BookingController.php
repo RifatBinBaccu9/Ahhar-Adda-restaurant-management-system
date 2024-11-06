@@ -37,10 +37,12 @@ class BookingController extends Controller
     }
   public function bookingPeoplePush(Request $req){
     $req->validate([
-        'people'=>'required'
+        'people'=>'required',
+        'AhharAddaBranch'=>'required',
     ]);
     $people=[
-        'people'=>$req->people
+        'people'=>$req->people,
+        'AhharAddaBranch'=>$req->AhharAddaBranch
     ];
     AddBookingPeople::create($people);
     return redirect()->back();
@@ -60,12 +62,17 @@ public function addbookingPeopleUpdate($id){
     $navbar=Navbar::get();
     $user=Auth::user();
     $peopleData=AddBookingPeople::where(['id'=>$id])->first();
-    return view('admin-site.pages.booking.peopleListUpdate', [ 'NavbarView'=>$navbar, 'user'=>$user, 'peopleUpView'=>$peopleData]);
+    return view('admin-site.pages.booking.peopleListUpdate', [ 
+        'NavbarView'=>$navbar, 
+        'user'=>$user, 
+        'peopleUpView'=>$peopleData
+    ]);
 }
 
 public function addbookingPeopleDataedit (Request $req){
     $people=[
-        'people'=>$req->people
+        'people'=>$req->people,
+        'AhharAddaBranch'=>$req->AhharAddaBranch,
     ]; 
    AddBookingPeople::where(['id'=>$req->id])->update($people);
    return redirect()->route('addbookingPeopleData');
@@ -78,17 +85,21 @@ public function addbookingPeopleDataDelete($id){
     public function bookingPush(Request $req){
         $req->validate([
          'name'=>'required',
+         'phone'=>'required',
          'email'=>'required|email:rfc, dns',
          'datetime'=>'required',
          'select'=>'required',
+         'AhharAddaBranch'=>'required',
          'message'=>'required',
         ]);
         $bookingData=[
           'user_id' => Auth::user()->id,
           'name'=>$req->name,
+          'phone'=>$req->phone,
           'email'=>$req->email,
           'datetime'=>$req->datetime,
           'select'=>$req->select,
+          'AhharAddaBranch'=>$req->AhharAddaBranch,
           'message'=>$req->message,
         ];
         Booking::create($bookingData);

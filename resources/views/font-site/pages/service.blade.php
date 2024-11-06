@@ -62,8 +62,8 @@
             <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
                 <div class="service-item rounded pt-3">
                     <div class="p-4">
-                        <img src="{{asset($item->ServiceImage)}}" alt="" height="70">
-                        <h5>{{$item->ServiceTitle}}</h5>
+                        <img src="{{asset($item->ServiceImage)}}" alt="" height="50">
+                        <h5 style="margin-top: 10px">{{$item->ServiceTitle}}</h5>
                         <p>{{$item->ServiceDetails}}</p>
                     </div>
                 </div>

@@ -27,4 +27,40 @@
 
     <!-- Template Stylesheet -->
     <link href="/font-site/css/style.css" rel="stylesheet">
+
+    {{-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet"> --}}
+    
+    {{-- <style>
+        /* Custom CSS for Discount Section */
+        body {
+            background-color: #f8f9fa;
+        }
+        .discount-section h2 {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 30px;
+        }
+        .card {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        .card-title {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+        .card-text {
+            font-size: 1.1rem;
+            color: #555;
+        }
+        .btn-primary, .btn-danger {
+            border-radius: 20px;
+            padding: 10px 20px;
+            font-weight: bold;
+        }
+    </style> --}}
 </head>

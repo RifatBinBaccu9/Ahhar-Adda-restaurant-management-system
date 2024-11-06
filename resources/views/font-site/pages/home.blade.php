@@ -55,6 +55,34 @@
     </div>
     <!-- Navbar & Hero End -->
 
+   
+
+{{-- <div class="container my-5 discount-section">
+    <h2 class="text-center mb-4">Restaurant Discounts</h2>
+    <div class="row justify-content-center">
+        <!-- 20% Discount Card -->
+        <div class="col-md-4 mb-3">
+            <div class="card text-center border-primary">
+                <div class="card-body">
+                    <h3 class="card-title text-primary">20% Off</h3>
+                    <p class="card-text">Get a 20% discount on selected menu items.</p>
+                    <a href="#" class="btn btn-primary">Avail Offer</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 50% Discount Card -->
+        <div class="col-md-4 mb-3">
+            <div class="card text-center border-danger">
+                <div class="card-body">
+                    <h3 class="card-title text-danger">50% Off</h3>
+                    <p class="card-text">Limited time 50% discount on all orders above $50!</p>
+                    <a href="#" class="btn btn-danger">Avail Offer</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> --}}
 
     <!-- Service Start -->
     <div class="container-xxl py-5">
@@ -68,8 +96,8 @@
             <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
                 <div class="service-item rounded pt-3">
                     <div class="p-4">
-                        <img src="{{asset($item->ServiceImage)}}" alt="" height="70">
-                        <h5>{{$item->ServiceTitle}}</h5>
+                        <img src="{{asset($item->ServiceImage)}}" alt="" height="50">
+                        <h5 style="margin-top: 10px">{{$item->ServiceTitle}}</h5>
                         <p>{{$item->ServiceDetails}}</p>
                     </div>
                 </div>
@@ -255,13 +283,22 @@
                     <h1 class="text-white mb-4">Book A Table Online</h1>
                     <form action="{{route('bookingPush')}}" method="POST">
                         @csrf
-
+                      
                         <div class="row g-3">
                             <div class="col-md-6">
                                 <div class="form-floating">
                                     <input type="text" name="name" class="@error('name') is-invalid @enderror form-control" id="name" placeholder="Your Name">
                                     <label for="name">Your Name</label>
                                     @error('name')
+                                    <div class="text-danger">{{ $message }}</div>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="number" name="phone" class="@error('phone') is-invalid @enderror form-control" id="phone" placeholder="Your Phone">
+                                    <label for="phone">Your Phone</label>
+                                    @error('phone')
                                     <div class="text-danger">{{ $message }}</div>
                                     @enderror
                                 </div>
@@ -287,13 +324,29 @@
                             <div class="col-md-6">
                                 <div class="form-floating">
                                     <select class="form-select @error('select') is-invalid @enderror" name="select" id="select1">
-                                        @foreach ($bookingView as $item)
-                                          
-                                        <option value="{{$item->people}}">people{{$item->people}}</option>
-                                        @endforeach
+                                      @foreach ($bookingView as $item)
+                                      
+                                      <option value="{{$item->people}}">People {{$item->people}}</option>
+                                      @endforeach
+                                
                                     </select>
                                     <label for="select1">No Of People</label>
                                     @error('select')
+                                    <div class="text-danger">{{ $message }}</div>
+                                    @enderror
+                                  </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <select class="form-select @error('AhharAddaBranch') is-invalid @enderror" name="AhharAddaBranch" id="AhharAddaBranch">
+                                      @foreach ($bookingView as $item)
+                                      
+                                      <option value="{{$item->AhharAddaBranch}}">{{$item->AhharAddaBranch}}</option>
+                                      @endforeach
+                                
+                                    </select>
+                                    <label for="AhharAddaBranch">Ahhar Adda Branch</label>
+                                    @error('AhharAddaBranch')
                                     <div class="text-danger">{{ $message }}</div>
                                     @enderror
                                   </div>

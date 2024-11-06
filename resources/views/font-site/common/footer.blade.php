@@ -42,7 +42,7 @@
         <div class="copyright">
             <div class="row">
                 <div class="col-md-12 text-center text-md-center mb-3 mb-md-0">
-                    Copyright © 2024 - All right reserved by Md.Rifat Mia
+                    CopyRight © 2024 - All right reserved by Md.Rifat Mia
                 </div>
             </div>
         </div>

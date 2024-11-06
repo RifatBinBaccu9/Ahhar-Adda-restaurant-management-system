@@ -21,6 +21,7 @@
               <thead>
                 <tr>
                     <th>People</th>
+                    <th>Ahhar Adda Branch</th>
                     <th>Action</th>
                 </tr>
             </thead>
@@ -28,6 +29,7 @@
                 @foreach ($peopleView as $item)
                 <tr>
                     <td>{{$item->people}}</td>
+                    <td>{{$item->AhharAddaBranch}}</td>
                     <td>
                         <!-- Update Button -->
                         <a href="{{route('addbookingPeopleUpdate', $item->id)}}" class="btn btn-warning btn-sm">

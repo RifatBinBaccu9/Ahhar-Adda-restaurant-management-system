@@ -25,6 +25,12 @@
               @error('people')
               <div class="text-danger">{{ $message }}</div>
             @enderror
+            <div class="col-12">
+              <label for="AhharAddaBranch" class="form-label">Ahhar Adda Branch</label>
+              <input type="text" name="AhharAddaBranch" class="@error('AhharAddaBranch') is-invalid @enderror form-control" id="AhharAddaBranch">
+              @error('AhharAddaBranch')
+              <div class="text-danger">{{ $message }}</div>
+            @enderror
             </div>
               <button type="submit" class="btn btn-primary">Submit</button>
               <button type="reset" class="btn btn-secondary">Reset</button>

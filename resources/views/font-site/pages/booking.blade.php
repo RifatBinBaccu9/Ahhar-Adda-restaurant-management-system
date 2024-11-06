@@ -79,6 +79,15 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-floating">
+                                        <input type="number" name="phone" class="@error('phone') is-invalid @enderror form-control" id="phone" placeholder="Your Phone">
+                                        <label for="phone">Your Phone</label>
+                                        @error('phone')
+                                        <div class="text-danger">{{ $message }}</div>
+                                        @enderror
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating">
                                         <input type="text" name="email" class="@error('email') is-invalid @enderror form-control" id="email" placeholder="Your Email">
                                         <label for="email">Your Email</label>
                                         @error('email')
@@ -100,12 +109,27 @@
                                         <select class="form-select @error('select') is-invalid @enderror" name="select" id="select1">
                                           @foreach ($bookingView as $item)
                                           
-                                          <option value="{{$item->people}}">people{{$item->people}}</option>
+                                          <option value="{{$item->people}}">People {{$item->people}}</option>
                                           @endforeach
                                     
                                         </select>
                                         <label for="select1">No Of People</label>
                                         @error('select')
+                                        <div class="text-danger">{{ $message }}</div>
+                                        @enderror
+                                      </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <select class="form-select @error('AhharAddaBranch') is-invalid @enderror" name="AhharAddaBranch" id="AhharAddaBranch">
+                                          @foreach ($bookingView as $item)
+                                          
+                                          <option value="{{$item->AhharAddaBranch}}">{{$item->AhharAddaBranch}}</option>
+                                          @endforeach
+                                    
+                                        </select>
+                                        <label for="AhharAddaBranch">Ahhar Adda Branch</label>
+                                        @error('AhharAddaBranch')
                                         <div class="text-danger">{{ $message }}</div>
                                         @enderror
                                       </div>

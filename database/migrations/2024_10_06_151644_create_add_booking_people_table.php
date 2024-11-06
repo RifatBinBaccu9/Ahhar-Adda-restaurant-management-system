@@ -13,7 +13,8 @@ return new class extends Migration
     {
         Schema::create('add_booking_people', function (Blueprint $table) {
             $table->id();
-            $table->string('people');
+            $table->string('people')->nullable();
+            $table->string('AhharAddaBranch')->nullable();
             $table->timestamps();
         });
     }

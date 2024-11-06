@@ -40,17 +40,17 @@
           </a>
       </li><!-- End Service Setting Nav -->
 
-      <li class="nav-heading">Booking People Setting</li>
+      <li class="nav-heading">Booking People & Branch</li>
       <li class="nav-item">
         <a class="nav-link collapsed" href="{{ url('/admin/addbookingPeople') }}">
             <i class="bi bi-journal-text"></i>
-            <span>Add Number of people</span>
+            <span>Add People & Branch</span>
         </a>
     </li>
     <li class="nav-item">
         <a class="nav-link collapsed" href="{{ url('/admin/addbookingPeopleData') }}">
             <i class="bi bi-layout-text-window-reverse"></i>
-            <span>Add People Set List</span>
+            <span>Add People & Branch List</span>
         </a>
     </li><!-- End Service Setting Nav -->
 
@@ -128,7 +128,7 @@
     <li class="nav-item">
       <a class="nav-link collapsed" href="{{ url('/admin/navbarUpdateForm') }}">
           <i class="bi bi-journal-text"></i>
-          <span>Update NavBar Name</span>
+          <span>Update WebSite Name</span>
       </a>
   </li><!-- End Service Setting Nav -->
 
